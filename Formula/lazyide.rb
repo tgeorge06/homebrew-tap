@@ -2,7 +2,7 @@ class Lazyide < Formula
   desc "Lightweight terminal-native IDE built with Rust and ratatui"
   homepage "https://github.com/tgeorge06/lazyide"
   url "https://github.com/tgeorge06/lazyide/archive/refs/tags/v0.1.0.tar.gz"
-  sha256 "385c4854482dc682cfeea88debbc18a50c7aa469e5704f55c4a2a1b305aca58f"
+  sha256 "ec739b571fbed44a048bd7f3fc6db86fd13e67833298d7a5c960c3d803e47424"
   license "MIT"
 
   depends_on "rust" => :build
