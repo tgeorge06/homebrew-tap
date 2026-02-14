@@ -1,14 +1,21 @@
 class Lazyide < Formula
   desc "Lightweight terminal-native IDE built with Rust and ratatui"
   homepage "https://github.com/tgeorge06/lazyide"
-  url "https://github.com/tgeorge06/lazyide/archive/refs/tags/v0.2.2.tar.gz"
-  sha256 "a036e606f2771a4d556fe7db35b013f47271af58fae8454d6daef9306cca64bd"
+  version "0.2.2"
   license "MIT"
 
-  depends_on "rust" => :build
+  on_macos do
+    if Hardware::CPU.arm?
+      url "https://github.com/tgeorge06/lazyide/releases/download/v0.2.2/lazyide-macos-aarch64.tar.gz"
+      sha256 "c5476c3e14b570b7782d50176afa7ddf80c1701ed319b4bf593efb7037fb3299"
+    else
+      url "https://github.com/tgeorge06/lazyide/releases/download/v0.2.2/lazyide-macos-x86_64.tar.gz"
+      sha256 "f284df01df95887c801a26b98fc19816726374bb4a19d0b6d129dd7f3c0e3a24"
+    end
+  end
 
   def install
-    system "cargo", "install", *std_cargo_args
+    bin.install "lazyide"
   end
 
   def caveats
