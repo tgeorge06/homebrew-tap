@@ -9,8 +9,6 @@ class Lazyide < Formula
 
   def install
     system "cargo", "install", *std_cargo_args
-    # Install theme files (for user customization; themes are also embedded in binary)
-    (share/"lazyide/themes").install Dir["themes/*.json"]
   end
 
   def caveats
